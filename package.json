@@ -1,0 +1,32 @@
+{
+  "name": "vanilla-node-server",
+  "version": "0.1.0",
+  "description": "vanilla node.js web server",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "eslint .; exit 0;",
+    "test": "mocha --reporter spec",
+    "nodemon": "nodemon --watch server --watch index.js index.js",
+    "browser-sync": "browser-sync start --proxy 'localhost:8080' --serveStatic public --files public/*",
+    "dev": "npm-run-all --parallel nodemon browser-sync",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "node.js",
+    "server",
+    "vanilla",
+    "plain"
+  ],
+  "author": "Victor Rodriguez",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.5",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^3.1.2"
+  },
+  "engines" : {
+    "node" : ">=6.0.0"
+  }
+}
